@@ -1,0 +1,45 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+      <div class="text-center bg-danger">
+        <i class="far fa-file-alt fa-4x mb-3 text-primary"></i>
+        <p>
+          <strong>{{jugarPreguntaInterface.pregunta}}</strong>
+        </p>
+      </div>
+
+      <hr />
+
+      <div>
+        <p class="text-center"><strong>Answer:</strong></p>
+        <hr>
+        <table class="table table-hover table-wrap text-center">
+          <tbody>
+            <tr *ngFor="let respuesta of jugarRespuestaInterfaceMostrar">
+              <td scope="col" (click)="comprobarRespuesta(respuesta.id)">{{respuesta.respuesta}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" [id]="mimodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{modalTitle}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"  (click)="getPregunta()"></button>
+      </div>
+      <div class="modal-body">
+
+        {{modalContent}}
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="getPregunta()">Siguiente</button>
+      </div>
+    </div>
+  </div>
+</div>
