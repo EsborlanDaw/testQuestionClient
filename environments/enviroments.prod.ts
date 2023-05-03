@@ -3,7 +3,7 @@ import { HttpHeaders } from "@angular/common/http";
 
 export const environment = {
   production: true,
-  baseURL: "http://localhost:8082/",
+  baseURL: "erratic-gun-production.up.railway.app/",
   headers: { 'content-type': 'application/json' },
 };
 export const httpOptions = {
